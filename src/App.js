@@ -8,12 +8,15 @@ function App() {
   const [groww, setGroww] = useState(0);
   const [fd, setFd] = useState(0);
   const [pf, setPf] = useState(0);
+  const [other, setOther] = useState(0);
   const [result, setResult] = useState(0);
 
   const calculate = (event) => {
     event.preventDefault();
     console.log({ bankAccount, groww, fd, pf });
-    const formattedResult = localeformat(String(bankAccount + groww + fd + pf));
+    const formattedResult = localeformat(
+      String(bankAccount + groww + fd + pf + other)
+    );
     setResult(formattedResult + " Rs");
   };
 
@@ -59,6 +62,16 @@ function App() {
             className="form-control"
             id="PF"
             placeholder="Enter PF"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="other">PF</label>
+          <input
+            onChange={(event) => setOther(+event.target.value)}
+            type="text"
+            className="form-control"
+            id="other"
+            placeholder="Enter Others"
           />
         </div>
         <button
