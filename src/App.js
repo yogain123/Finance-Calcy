@@ -15,7 +15,7 @@ function App() {
     event.preventDefault();
     console.log({ bankAccount, groww, fd, pf });
     const formattedResult = localeformat(
-      String(bankAccount + groww + fd + pf + other)
+      String(+bankAccount + +groww + +fd + +pf + +other)
     );
     setResult(formattedResult + " Rs");
   };
@@ -35,7 +35,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="groww">GROWW</label>
           <input
-            onChange={(event) => setGroww(+event.target.value)}
+            onChange={(event) => setGroww(event.target.value)}
             type="text"
             className="form-control"
             id="groww"
@@ -46,7 +46,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="saving_bank_account">SAVING BANK ACCOUNT</label>
           <input
-            onChange={(event) => setBankAccount(+event.target.value)}
+            onChange={(event) => setBankAccount(event.target.value)}
             type="text"
             className="form-control"
             id="saving_bank_account"
@@ -57,7 +57,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="fd">FD</label>
           <input
-            onChange={(event) => setFd(+event.target.value)}
+            onChange={(event) => setFd(event.target.value)}
             type="text"
             className="form-control"
             id="fd"
@@ -68,7 +68,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="PF">PF</label>
           <input
-            onChange={(event) => setPf(+event.target.value)}
+            onChange={(event) => setPf(event.target.value)}
             type="text"
             className="form-control"
             id="PF"
@@ -79,7 +79,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="other">OTHERS</label>
           <input
-            onChange={(event) => setOther(+event.target.value)}
+            onChange={(event) => setOther(event.target.value)}
             type="text"
             className="form-control"
             id="other"
