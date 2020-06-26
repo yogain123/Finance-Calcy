@@ -4,16 +4,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { localeformat } from "./utils";
 
 function App() {
-  const [bankAccount, setBankAccount] = useState("");
-  const [groww, setGroww] = useState("");
-  const [fd, setFd] = useState("");
-  const [pf, setPf] = useState("");
-  const [other, setOther] = useState("");
-  const [result, setResult] = useState("");
+  let [bankAccount, setBankAccount] = useState("");
+  let [groww, setGroww] = useState("");
+  let [fd, setFd] = useState("");
+  let [pf, setPf] = useState("");
+  let [other, setOther] = useState("");
+  let [result, setResult] = useState("");
 
   const calculate = (event) => {
     event.preventDefault();
-    console.log({ bankAccount, groww, fd, pf });
+    groww = groww.replace(/,/g, "");
+    bankAccount = bankAccount.replace(/,/g, "");
+    fd = fd.replace(/,/g, "");
+    pf = pf.replace(/,/g, "");
+    other = other.replace(/,/g, "");
     const formattedResult = localeformat(
       String(+bankAccount + +groww + +fd + +pf + +other)
     );
@@ -35,7 +39,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="groww">GROWW</label>
           <input
-            onChange={(event) => setGroww(event.target.value)}
+            onChange={(event) => setGroww(localeformat(event.target.value))}
             type="text"
             className="form-control"
             id="groww"
@@ -46,7 +50,9 @@ function App() {
         <div className="form-group">
           <label htmlFor="saving_bank_account">SAVING BANK ACCOUNT</label>
           <input
-            onChange={(event) => setBankAccount(event.target.value)}
+            onChange={(event) =>
+              setBankAccount(localeformat(event.target.value))
+            }
             type="text"
             className="form-control"
             id="saving_bank_account"
@@ -57,7 +63,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="fd">FD</label>
           <input
-            onChange={(event) => setFd(event.target.value)}
+            onChange={(event) => setFd(localeformat(event.target.value))}
             type="text"
             className="form-control"
             id="fd"
@@ -68,7 +74,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="PF">PF</label>
           <input
-            onChange={(event) => setPf(event.target.value)}
+            onChange={(event) => setPf(localeformat(event.target.value))}
             type="text"
             className="form-control"
             id="PF"
@@ -79,7 +85,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="other">OTHERS</label>
           <input
-            onChange={(event) => setOther(event.target.value)}
+            onChange={(event) => setOther(localeformat(event.target.value))}
             type="text"
             className="form-control"
             id="other"

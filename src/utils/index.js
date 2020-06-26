@@ -1,4 +1,5 @@
 export function localeformat(str) {
+  str = str.replace(/,/g, "");
   if (+str <= 999) {
     return str;
   } else {
