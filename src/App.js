@@ -65,7 +65,7 @@ function App() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="other">PF</label>
+          <label htmlFor="other">OTHERS</label>
           <input
             onChange={(event) => setOther(+event.target.value)}
             type="text"
