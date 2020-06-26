@@ -30,6 +30,7 @@ function App() {
     setPf("");
     setFd("");
     setOther("");
+    setResult("");
   };
 
   return (
