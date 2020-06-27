@@ -21,7 +21,7 @@ function App() {
     rd = rd.replace(/,/g, "");
     other = other.replace(/,/g, "");
     const formattedResult = localeformat(
-      String(+bankAccount + +groww + +fd + +pf + +other)
+      String(+bankAccount + +groww + +fd + +pf + +rd + +other)
     );
     setResult(formattedResult + " Rs");
   };
