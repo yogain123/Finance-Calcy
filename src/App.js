@@ -50,7 +50,7 @@ function App() {
             placeholder="Enter groww amount"
             value={groww}
           />
-          {groww && (
+          {false && groww && (
             <p className="labelForRupee">
               {rupeeToWord(groww.replace(/,/g, ""))}
             </p>
@@ -68,7 +68,7 @@ function App() {
             placeholder="Enter Saving Bank Account"
             value={bankAccount}
           />
-          {bankAccount && (
+          {false && bankAccount && (
             <p className="labelForRupee">
               {rupeeToWord(bankAccount.replace(/,/g, ""))}
             </p>
@@ -84,7 +84,7 @@ function App() {
             placeholder="Enter FD"
             value={fd}
           />
-          {fd && (
+          {false && fd && (
             <p className="labelForRupee">{rupeeToWord(fd.replace(/,/g, ""))}</p>
           )}
         </div>
@@ -98,7 +98,7 @@ function App() {
             placeholder="Enter PF"
             value={pf}
           />
-          {pf && (
+          {false && pf && (
             <p className="labelForRupee">{rupeeToWord(pf.replace(/,/g, ""))}</p>
           )}
         </div>
@@ -112,7 +112,7 @@ function App() {
             placeholder="Enter RD"
             value={rd}
           />
-          {rd && (
+          {false && rd && (
             <p className="labelForRupee">{rupeeToWord(rd.replace(/,/g, ""))}</p>
           )}
         </div>
@@ -126,7 +126,7 @@ function App() {
             placeholder="Enter Others"
             value={other}
           />
-          {other && (
+          {false && other && (
             <p className="labelForRupee">
               {rupeeToWord(other.replace(/,/g, ""))}
             </p>
