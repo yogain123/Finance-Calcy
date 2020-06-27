@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { localeformat } from "./utils";
+import { localeformat, rupeeToWord } from "./utils";
 
 function App() {
   let [bankAccount, setBankAccount] = useState("");
@@ -10,6 +10,7 @@ function App() {
   let [pf, setPf] = useState("");
   let [other, setOther] = useState("");
   let [result, setResult] = useState("");
+  let [rd, setRd] = useState("");
 
   const calculate = (event) => {
     event.preventDefault();
@@ -17,6 +18,7 @@ function App() {
     bankAccount = bankAccount.replace(/,/g, "");
     fd = fd.replace(/,/g, "");
     pf = pf.replace(/,/g, "");
+    rd = rd.replace(/,/g, "");
     other = other.replace(/,/g, "");
     const formattedResult = localeformat(
       String(+bankAccount + +groww + +fd + +pf + +other)
@@ -29,6 +31,7 @@ function App() {
     setBankAccount("");
     setPf("");
     setFd("");
+    setRd("");
     setOther("");
     setResult("");
   };
@@ -47,7 +50,13 @@ function App() {
             placeholder="Enter groww amount"
             value={groww}
           />
+          {groww && (
+            <p className="labelForRupee">
+              {rupeeToWord(groww.replace(/,/g, ""))}
+            </p>
+          )}
         </div>
+        <br />
         <div className="form-group">
           <label htmlFor="saving_bank_account">SAVING BANK ACCOUNT</label>
           <input
@@ -60,7 +69,13 @@ function App() {
             placeholder="Enter Saving Bank Account"
             value={bankAccount}
           />
+          {bankAccount && (
+            <p className="labelForRupee">
+              {rupeeToWord(bankAccount.replace(/,/g, ""))}
+            </p>
+          )}
         </div>
+        <br />
         <div className="form-group">
           <label htmlFor="fd">FD</label>
           <input
@@ -71,7 +86,11 @@ function App() {
             placeholder="Enter FD"
             value={fd}
           />
+          {fd && (
+            <p className="labelForRupee">{rupeeToWord(fd.replace(/,/g, ""))}</p>
+          )}
         </div>
+        <br />
         <div className="form-group">
           <label htmlFor="PF">PF</label>
           <input
@@ -82,7 +101,26 @@ function App() {
             placeholder="Enter PF"
             value={pf}
           />
+          {pf && (
+            <p className="labelForRupee">{rupeeToWord(pf.replace(/,/g, ""))}</p>
+          )}
         </div>
+        <br />
+        <div className="form-group">
+          <label htmlFor="rd">RD</label>
+          <input
+            onChange={(event) => setRd(localeformat(event.target.value))}
+            type="text"
+            className="form-control"
+            id="rd"
+            placeholder="Enter RD"
+            value={rd}
+          />
+          {rd && (
+            <p className="labelForRupee">{rupeeToWord(rd.replace(/,/g, ""))}</p>
+          )}
+        </div>
+        <br />
         <div className="form-group">
           <label htmlFor="other">OTHERS</label>
           <input
@@ -93,7 +131,13 @@ function App() {
             placeholder="Enter Others"
             value={other}
           />
+          {other && (
+            <p className="labelForRupee">
+              {rupeeToWord(other.replace(/,/g, ""))}
+            </p>
+          )}
         </div>
+        <br />
         <button
           type="submit"
           className="btn btn-primary"

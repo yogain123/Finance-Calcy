@@ -40,3 +40,9 @@
 body {
   background-color: rgb(109, 177, 177) !important;
 }
+
+.labelForRupee {
+  float: left;
+  color: blue;
+  margin-left: 10px;
+}
