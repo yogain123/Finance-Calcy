@@ -56,7 +56,6 @@ function App() {
             </p>
           )}
         </div>
-        <br />
         <div className="form-group">
           <label htmlFor="saving_bank_account">SAVING BANK ACCOUNT</label>
           <input
@@ -75,7 +74,6 @@ function App() {
             </p>
           )}
         </div>
-        <br />
         <div className="form-group">
           <label htmlFor="fd">FD</label>
           <input
@@ -90,7 +88,6 @@ function App() {
             <p className="labelForRupee">{rupeeToWord(fd.replace(/,/g, ""))}</p>
           )}
         </div>
-        <br />
         <div className="form-group">
           <label htmlFor="PF">PF</label>
           <input
@@ -105,7 +102,6 @@ function App() {
             <p className="labelForRupee">{rupeeToWord(pf.replace(/,/g, ""))}</p>
           )}
         </div>
-        <br />
         <div className="form-group">
           <label htmlFor="rd">RD</label>
           <input
@@ -120,7 +116,6 @@ function App() {
             <p className="labelForRupee">{rupeeToWord(rd.replace(/,/g, ""))}</p>
           )}
         </div>
-        <br />
         <div className="form-group">
           <label htmlFor="other">OTHERS</label>
           <input
@@ -137,7 +132,6 @@ function App() {
             </p>
           )}
         </div>
-        <br />
         <button
           type="submit"
           className="btn btn-primary"
